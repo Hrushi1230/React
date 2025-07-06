@@ -1,0 +1,9 @@
+#root{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #050505;
+    color: rgb(255, 255, 255);
+}
