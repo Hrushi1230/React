@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat Bot</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+      function Button({count,setCount}){
+       
+        function click(){
+            setCount(count+ 1)
+            console.log(count);
+        }
+        return(
+            <>
+            <button onClick={click} >Clicked {count} times</button>
+            </>
+        )
+      }
+      function Reset({setCount}){
+        return(
+            <button onClick={()=>{
+              setCount(0);
+            }}>Reset</button>
+        )
+      }
+      
+      function App(){
+        let tap=0;
+         const [count,setCount]=React.useState(tap);
+        return(
+          <>
+          <Button
+          count={count}
+          setCount={setCount}
+          />
+          <Button
+          count={count}
+          setCount={setCount}
+          />
+          <Reset 
+          count={count}
+          setCount={setCount}/>
+          </>
+        )
+      };
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App/>);
+    </script>
+  </body>
+</html>
