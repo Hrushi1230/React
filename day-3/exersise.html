@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chat Bot</title>
+    <style>
+        button{
+           
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            margin-left: 400px;
+            margin-top: 200px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .green-btn{
+            background-color: rgb(44, 132, 44);
+        }
+        .red-btn{
+             background-color: rgb(252, 78, 78);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function Button(){
+        const [isButtonON,setIsButtonOn]=React.useState(true);
+        return(
+            <div >
+                <button onClick={()=>{  
+                   setIsButtonOn(!isButtonON);
+                }}
+                className={isButtonON ?"green-btn" : "red-btn"}
+                >{isButtonON ? "ON" : "OFF"}</button>
+            </div>
+        )
+      }
+
+
+      function App(){
+        
+        return(
+          <>
+          <Button/>
+          </>
+        )
+      };
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App/>);
+    </script>
+  </body>
+</html>
